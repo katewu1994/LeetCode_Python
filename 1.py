@@ -1,14 +1,10 @@
 class Solution:
     def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        h = {}
+        h={};
         for i, num in enumerate(nums):
             n = target - num
-            if n not in h:
-                h[num] = i
+            
+            if n in h:
+                return [h[n],i]
             else:
-                return [h[n], i]
+                h[num] = i  
